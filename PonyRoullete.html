@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PonyRoulette</title>
+<script type="text/javascript">
+var imageURLs = [
+
+  "https://derpicdn.net/img/2017/6/10/1458096/thumb.png" <!-- [Funnel Web] -->
+, "https://derpicdn.net/img/2022/11/26/2995557/thumb.png" <!-- [King Sombra] -->
+, "https://derpicdn.net/img/2026/3/4/3776487/thumb.png" <!-- [Twilight Sparkle(alicorn)] -->
+, "https://derpicdn.net/img/2025/12/23/3733850/thumb.png" <!-- [Limestone Pie] -->
+, "https://derpicdn.net/img/2025/12/21/3733199/thumb.png" <!-- [Rainbow Dash] -->
+, "https://derpicdn.net/img/2025/12/20/3732681/thumb.png" <!-- [Flim] -->
+, "https://derpicdn.net/img/2025/12/20/3732682/thumb.png" <!-- [Flam] -->
+, "https://derpicdn.net/img/2025/12/20/3732668/thumb.png" <!-- [Berry Green] -->
+, "https://derpicdn.net/img/2025/12/20/3732672/thumb.png" <!-- [Squeaky Clean] -->
+, "https://derpicdn.net/img/2025/12/20/3732562/thumb.png" <!-- [woona] -->
+, "https://derpicdn.net/img/2025/12/20/3732284/thumb.png" <!-- [Starlight Glimmer(reformed)] -->
+, "https://derpicdn.net/img/2025/12/3/3722049/thumb.png" <!-- [Sunset Shimmer] -->
+, "https://derpicdn.net/img/2025/10/28/3701307/thumb.png" <!-- [Hoity Toity] -->
+, "https://derpicdn.net/img/2025/10/9/3690329/thumb.png" <!-- [Nightmare Moon] -->
+, "https://derpicdn.net/img/2025/10/27/3700794/thumb.png" <!-- [Flurry Heart] -->
+, "https://derpicdn.net/img/2025/10/7/3689564/thumb.png" <!-- [Tempest Shadow] -->
+, "https://derpicdn.net/img/2025/10/7/3689544/thumb.png" <!-- [Songbird Serenade] -->
+, "https://derpicdn.net/img/2025/9/14/3675591/thumb.png" <!-- [Hoo’far] -->
+, "https://derpicdn.net/img/2025/9/14/3675794/thumb.png" <!-- [Rainy Day] -->
+, "https://derpicdn.net/img/2025/9/14/3675793/thumb.png" <!-- [Appointed Rounds] -->
+, "https://derpicdn.net/img/2025/9/14/3675792/thumb.png" <!-- [Sunny Delivery] -->
+, "https://derpicdn.net/img/2025/9/10/3673852/thumb.png" <!-- [Pear Butter] -->
+, "https://derpicdn.net/img/2025/9/10/3673851/thumb.png" <!-- [Bright Mac] -->
+, "https://derpicdn.net/img/2025/9/10/3673571/thumb.png" <!-- [Sky Stinger] -->
+, "https://derpicdn.net/img/2025/9/9/3673468/thumb.png" <!-- [Fleetfoot] -->
+, "https://derpicdn.net/img/2025/8/26/3664836/thumb.png" <!-- [Marble Pie] -->
+, "https://derpicdn.net/img/2025/8/5/3654235/thumb.png" <!-- [Magnet Bolt] -->
+, "https://derpicdn.net/img/2025/8/4/3653102/thumb.png" <!-- [Twist] -->
+, "https://derpicdn.net/img/2025/7/19/3643791/thumb.png" <!-- [Vapor Trail] -->
+, "https://derpicdn.net/img/2025/7/19/3643356/thumb.png" <!-- [Daybreaker] -->
+, "https://derpicdn.net/img/2025/7/15/3641431/thumb.png" <!-- [Cozy Glow] -->
+, "https://derpicdn.net/img/2025/7/14/3640521/thumb.png" <!-- [s5 Starlight Glimmer] -->
+, "https://derpicdn.net/img/2025/7/13/3640270/thumb.png" <!-- [Ace Point] -->
+, "https://derpicdn.net/img/2025/7/12/3639853/thumb.png" <!-- [Filthy Rich] -->
+, "https://derpicdn.net/img/2025/7/12/3639739/thumb.png" <!-- [Silver Spoon] -->
+, "https://derpicdn.net/img/2025/7/13/3640298/thumb.png" <!-- [Florina Tart] -->
+, "https://derpicdn.net/img/2025/7/12/3639737/thumb.png" <!-- [Bon Bon] -->
+, "https://derpicdn.net/img/2025/7/12/3639709/thumb.png" <!-- [Doctor Stable] -->
+, "https://derpicdn.net/img/2025/5/30/3614355/thumb.png" <!-- [Twilight Sparkle(unicorn)] -->
+, "https://derpicdn.net/img/2025/5/26/3612190/thumb.png" <!-- [Fluttershy] -->
+, "https://derpicdn.net/img/2025/5/25/3612091/thumb.png" <!-- [Rarity] -->
+, "https://derpicdn.net/img/2025/5/25/3611978/thumb.png" <!-- [Pinkie Pie] -->
+, "https://derpicdn.net/img/2025/5/10/3603185/thumb.png" <!-- [Suri Polomare] -->
+, "https://derpicdn.net/img/2025/4/19/3590042/thumb.png" <!-- [Photo Finish] -->
+, "https://derpicdn.net/img/2025/4/14/3586835/thumb.png" <!-- [Applejack] -->
+, "https://derpicdn.net/img/2025/12/20/3732548/thumb.png" <!-- [Princess Luna] -->
+, "https://derpicdn.net/img/2025/5/30/3614282/thumb.png" <!-- [Princess Celestia] -->
+, "https://derpicdn.net/img/2019/4/27/2024720/thumb.png" <!-- [Nurse High Fever] -->
+, "https://derpicdn.net/img/2025/12/5/3723786/thumb.png" <!-- [Sunburst] -->
+, "https://derpicdn.net/img/2025/5/2/3598386/thumb.png" <!-- [Cheerilee] -->
+, "https://derpicdn.net/img/2025/8/4/3653087/thumb.png" <!-- [Diamond Tiara] -->
+, "https://derpicdn.net/img/2025/10/27/3700741/thumb.png" <!-- [Scootaloo] -->
+, "https://derpicdn.net/img/2025/10/27/3700742/thumb.png" <!-- [Sweetie Belle] -->
+, "https://derpicdn.net/img/2025/10/27/3700744/thumb.png" <!-- [Apple Bloom] -->
+];
+function getImageTag() {
+var img = '<img src=\"';
+var randomIndex = Math.floor(Math.random() * imageURLs.length);
+img += imageURLs[randomIndex];
+img += '\" alt=\"If you see this either Sound Byte messed up the link or im actively under attack by millitary androids\"/>';
+return img;
+}
+</script>
+</head>
+<body style="background-color:#1E242E">
+
+<h1 style="font-family:cursive; color:pink; text-align:center;font-size:60px"><b>Pony Roulette</b></h1>
+
+<br>
+
+<center><button style="color:green;" onclick="location.reload()">REROLL</button>
+
+<br>
+
+<center><script type="text/javascript">
+  document.write(getImageTag());
+</script>
+</body>
+</html>
