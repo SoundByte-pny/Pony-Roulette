@@ -1,3 +1,5 @@
+<img width="537" height="657" alt="Screenshot 2026-10-07 at 7 27 43 AM" src="https://github.com/user-attachments/assets/ecb1ff6f-0059-4e0d-935d-2e8e7e079096" />
+
 Pony Roulette!
 
 A web app by Sound Byte!
